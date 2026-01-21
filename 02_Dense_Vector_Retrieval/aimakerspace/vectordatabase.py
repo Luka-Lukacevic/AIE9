@@ -1,6 +1,7 @@
+import pickle
 import numpy as np
 from collections import defaultdict
-from typing import List, Tuple, Callable
+from typing import List, Optional, Tuple, Callable
 from aimakerspace.openai_utils.embedding import EmbeddingModel
 import asyncio
 
@@ -52,6 +53,25 @@ class VectorDatabase:
         for text, embedding in zip(list_of_text, embeddings):
             self.insert(text, np.array(embedding))
         return self
+    
+    def save(self, path: str) -> None:
+        payload = {
+            "vectors": self.vectors,  # dict[str, np.array]
+            "embedding_model_name": getattr(self.embedding_model, "embeddings_model_name", None),
+        }
+        with open(path, "wb") as f:
+            pickle.dump(payload, f, protocol=pickle.HIGHEST_PROTOCOL)
+
+    @classmethod
+    def load(cls, path: str, embedding_model: Optional["EmbeddingModel"] = None) -> "VectorDatabase":
+        with open(path, "rb") as f:
+            payload = pickle.load(f)
+
+        db = cls(embedding_model=embedding_model or EmbeddingModel(
+            embeddings_model_name=payload.get("embedding_model_name") or "text-embedding-3-small"
+        ))
+        db.vectors = payload["vectors"]
+        return db
 
 
 if __name__ == "__main__":
