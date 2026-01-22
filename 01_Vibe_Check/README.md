@@ -45,20 +45,20 @@ You will be required to submit a link to your GitHub, as well as screenshots of 
 Please evaluate your system on the following questions:
 
 1. Explain the concept of object-oriented programming in simple terms to a complete beginner.
-    - Aspect Tested:
+    - Aspect Tested: ✅
 2. Read the following paragraph and provide a concise summary of the key points…
-    - Aspect Tested:
+    - Aspect Tested: ✅
 3. Write a short, imaginative story (100–150 words) about a robot finding friendship in an unexpected place.
-    - Aspect Tested:
+    - Aspect Tested: ✅
 4. If a store sells apples in packs of 4 and oranges in packs of 3, how many packs of each do I need to buy to get exactly 12 apples and 9 oranges?
-    - Aspect Tested:
+    - Aspect Tested: ✅
 5. Rewrite the following paragraph in a professional, formal tone…
-    - Aspect Tested:
+    - Aspect Tested: ✅
 
 #### ❓Question #1:
 
 Do the answers appear to be correct and useful?
-##### ✅ Answer:
+##### ✅ Answer: Yes, the answers appear to be exactly that. 
 
 ---
 
@@ -73,17 +73,111 @@ Now test your assistant with personal questions it should be able to help with. 
 - "What can I cook with [enter ingredients] in fridge."
 
 ##### Your Prompts and Results:
-1. Prompt:
+1. Prompt: Help me surprise my fiancee for her upcoming birthday.
    - Result:
-2. Prompt:
-   - Result:
-3. Prompt:
-   - Result:
+   That sounds like a beautiful gesture! Here are some ideas to help you create a memorable surprise for your fiancée’s birthday:
+   
+        **Themed Surprise Party**: Host a small surprise party with a theme she loves (like a favorite movie, color, or hobby). Invite close friends and family, and decorate accordingly.
 
+        **Personalized Gift**: Create or buy a thoughtful, personalized gift. This could be a custom piece of jewelry, a framed photo collage of your favorite memories together, or a scrapbook filled with your shared adventures.
+
+        **Romantic Getaway**: Plan a surprise weekend getaway to a place she has always wanted to visit. Keep the destination a secret until you get there!
+
+        **Memory Lane**: Organize a day that involves visiting places that are significant to your relationship: where you met, had your first date, etc. End the day at a romantic restaurant.
+
+        **Private Dinner**: Arrange for a private dinner, either at home with a chef or at a cozy restaurant. You could even cook her favorite meal if you feel up to it!
+
+        **Thoughtful Experience**: Treat her to an experience she would love, such as a spa day, a cooking class, or tickets to a concert or show she’s excited about.
+
+        **Video Messages**: Compile video messages from family and friends expressing their love and birthday wishes for her. Present it to her as a surprise.
+
+        **Treasure Hunt**: Create a treasure hunt leading her to different locations that are special to your relationship, with little gifts or notes at each stop.
+
+        **Love Letters**: Write her a series of love letters for her to open throughout the day, expressing what she means to you and recalling your favorite moments.
+
+        **Surprise with Flowers**: Have a beautiful bouquet sent to her workplace or home, and pair it with a heartfelt note to brighten her day.
+
+        Consider what she would appreciate the most and what would resonate with her personality. The effort and thought you put into the surprise will be what makes her birthday truly special!
+2. Prompt: Give me advice on how to find a job abroad.
+   - Result: Finding a job abroad can be an exciting opportunity for personal and professional growth. Here are some strategies to guide you through the process:
+
+        **Research Your Destination**:
+        - Understand the job market, industry demand, and work culture of the country you're interested in.
+        - Explore visa requirements and work permit regulations, as these can vary greatly by country.
+
+        **Identify Your Skills**:
+        - Assess your skills and how they align with the job market abroad. Consider taking courses or certifications that can enhance your employability.
+
+        **Plan Your Financials**:
+        - Understand the cost of living in your target country and plan your finances accordingly. Save enough to support yourself during the job search period.
+
+        **Leverage Online Job Portals**:
+        - Use platforms like LinkedIn, Glassdoor, Indeed, and region-specific job sites to search for opportunities.
+        - Create a professional profile highlighting your skills, experiences, and willingness to relocate.
+
+        **Network**:
+        - Connect with professionals in your target industry through LinkedIn or industry-specific forums.
+        - Attend virtual networking events and webinars to meet people who can offer advice or refer you to job openings.
+
+        **Tailor Your Resume and Cover Letter**:
+        - Customize your application materials to fit the job requirements and cultural norms of the country.
+        - Highlight any international experience or language skills that could set you apart.
+
+        **Consider Internships or Volunteer Work**:
+        - If finding a full-time position proves challenging, consider internships or volunteer opportunities that can provide valuable experience and connections.
+
+        **Utilize Recruitment Agencies**:
+        - Engage with agencies that specialize in placing candidates in overseas jobs. They often have valuable contacts and can guide you through the hiring process.
+
+        **Learn the Language**:
+        - If the country has a primary language different from yours, consider learning it. This not only boosts your employability but also helps you integrate better into the local culture.
+
+        **Be Open and Flexible**:
+        - Be willing to explore opportunities that may not be exactly what you envisioned. Sometimes starting with a less-than-ideal position can lead to better opportunities.
+
+        **Prepare for Interviews**:
+        - Familiarize yourself with common interview practices in the country you’re targeting. This might include researching the types of questions typically asked and how to respond appropriately.
+
+        **Stay Persistent and Positive**:
+        - The job search can sometimes take longer than expected. Stay motivated and be prepared for potential setbacks.
+
+        Remember, the journey of finding a job abroad is not just about securing employment; it's also about personal growth and new experiences. Embrace the process, and don’t hesitate to reach out for support when needed!
+3. Prompt: I'm thinking of buying a Toyota hybrid vehicle. What are pros and cons of such recent models.
+   - Result: Great choice considering a Toyota hybrid! Toyota has a strong reputation for building reliable and efficient hybrid vehicles, and recent models incorporate advanced technology and improved performance. Here’s a breakdown of the pros and cons:
+        ### Pros:
+        **Fuel Efficiency**: Toyota hybrids are known for exceptional fuel economy, often surpassing traditional gasoline vehicles. This can lead to significant savings on fuel costs over time.
+
+        **Low Emissions**: They typically produce fewer emissions than conventional cars, making them a more environmentally friendly option.
+
+        **Reliability**: Toyota has a longstanding reputation for reliability and longevity. Many hybrid models maintain this reputation, often lasting well beyond 200,000 miles with proper maintenance.
+
+        **Resale Value**: Toyota vehicles, including hybrids, generally have strong resale values due to their reputation and reliability.
+
+        **Advanced Technology**: Recent models are equipped with modern features, including safety technology (like Toyota Safety Sense) and infotainment systems, offering added convenience and security.
+
+        **Smooth and Quiet Ride**: The hybrid systems provide a smooth driving experience and operate quietly, especially at lower speeds when the electric motor is active.
+
+        **Tax Incentives**: Depending on where you live, you might qualify for tax credits or rebates for purchasing a hybrid vehicle.
+
+        ### Cons:
+        **Higher Initial Cost**: Hybrids can have a higher purchase price compared to conventional gasoline vehicles, though this can be offset by fuel savings over time.
+
+        **Battery Replacement Costs**: While hybrid batteries are designed to last a long time, they will eventually need to be replaced, which can be costly.
+
+        **Less Power**: Some drivers may find that hybrid models lack the power and acceleration compared to their gasoline-only counterparts, particularly when heavily loaded or on steep inclines.
+
+        **Complexity of Repairs**: The hybrid technology can be more complex, which might lead to higher repair costs or limited repair options for certain issues.
+
+        **Cargo Space**: Some hybrid models may have reduced cargo space compared to their gasoline counterparts because of the design needed to accommodate the hybrid system.
+
+        **Driving Experience**: Some drivers prefer the feel of driving a traditional vehicle and may perceive hybrids as less engaging.
+
+        ### Conclusion:
+        If you prioritize fuel efficiency, environmental impact, and technology, a Toyota hybrid can be an excellent choice. Consider your driving habits and needs, weigh the pros and cons, and perhaps take a test drive to see how it feels. Ultimately, the right decision will align with your priorities and lifestyle. Feel free to ask if you have any specific models in mind or other questions!
 #### ❓Question #2:
 
 Are the vibes of this assistant's answers aligned with your vibes? Why or why not?
-##### ✅ Answer:
+##### ✅ Answer: Well, so so. The assistant is definitely helpfull but I would imagine it speaking in a different way and trying to kind of get to the root of the problem or figuring out why I'm even asking a question in the first place. I would imagine a conversation with a mental coach that can "help with stress, motivation, habits, and confidence" differently.
 
 ---
 
@@ -95,15 +189,15 @@ Now test your assistant with questions that would require capabilities beyond ba
 - "What time should I leave for the airport?"
 
 ##### Your Prompts and Results:
-1. Prompt:
-   - Result:
-2. Prompt:
-   - Result:
+1. Prompt: What time is my meeting tomorrow?
+   - Result: I don’t have access to your calendar or schedule, but I recommend checking your calendar app or any communication platform where the meeting details might be shared. If you would like tips on how to remember meetings or stay organized, feel free to ask!
+2. Prompt: How is my football university team doing this season? 
+   - Result: I don’t have access to real-time data or specific information about your university team's performance this season. However, I can help you reflect on their progress! You might want to consider factors like their win-loss record, individual player improvements, team dynamics, and how they perform in critical matches. It may also be helpful to look at the team's overall goals and whether they are aligning with their performance. If you have any specific aspects of the season you’d like to discuss, feel free to share!
 
 #### ❓Question #3:
 
 What are some limitations of your application?
-##### ✅ Answer:
+##### ✅ Answer: The biggest one is not being able to access some personal information or previous convestations which would make assistants answer more personal and probably helpful.
 
 ---
 
