@@ -9,3 +9,5 @@ uv.lock
 workspace
 *.egg*/
 .chainlit/
+node_modules/
+.next/
