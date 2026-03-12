@@ -70,12 +70,29 @@ What is the key architectural difference between the `simple_agent` and `agent_w
 
 ##### Answer:
 
+The main difference is that simple_agent only alternates between the agent node and tool execution, while agent_with_helpfulness adds a helpfulness evaluation step after the agent responds.
+
+In agent_with_helpfulness, the flow works like this: after the agent generates a response, if no tools are needed, the graph routes to a helpfulness node instead of ending. This node uses an LLM to evaluate whether the response is helpful. If it's helpful, the graph ends. If not, it loops back to the agent to try again.
+
+To prevent infinite loops, there are two safety mechanisms: message count limit - helpfulness node checks if there are more than 10 messages in the conversation. If so, it automatically returns HELPFULNESS:END to force termination. The second one is decision node - the helpfulness_decision function checks for "HELPFULNESS:Y" (helpful) or "HELPFULNESS:END" (timeout) messages and routes to END, preventing further loops.
+
 
 
 #### Question 2:
 What is the role of `langgraph.json` in the LangGraph Deployments? Describe each of its key fields and how the platform uses this file to discover and serve your graphs.
 
 ##### Answer:
+
+langgraph.json is the configuration file that tells the LangGraph platform how to discover, load, and serve our graphs.
+
+Key fields:
+- graphs: Maps graph IDs (e.g. "simple_agent") to Python import paths. The platform uses these paths to import and compile our graph objects.
+- assistants: Maps assistant names (e.g. "agent") to graph IDs. This allows us to expose graphs with friendly names and descriptions for API clients.
+- dependencies: Specifies which Python packages need to be installed.
+- env: Points to the .env file location for loading environment variables like API keys.
+- python_version: Specifies the required Python version.
+
+When we start the server, LangGraph reads this file, imports the graphs using the paths in graphs, and makes them available as assistants through the API endpoints.
 
 
 
