@@ -101,6 +101,20 @@ Create your own agent graph! Build a new graph in `app/graphs/` with a custom ev
 
 ##### Answer:
 
+Created a new graph agent_with_clarity_check.py with a clarity and conciseness evaluation node. The graph works as follows:
+
+1. The agent responds to user queries using available tools.
+2. After the agent generates a response, a clarity evaluation node checks if the response is clear, concise, and well-structured.
+3. If the response meets the clarity criteria, the graph ends.
+4. If not, the evaluation node provides specific feedback, and the graph loops back to the agent to improve the response.
+5. Safety mechanism: The graph automatically terminates after 12 messages to prevent infinite loops.
+
+The graph is registered in langgraph.json as:
+- Graph ID: agent_with_clarity_check
+- Assistant name: agent_clarity
+
+To test it, run uv run langgraph dev and use the assistant ID agent_clarity in API calls.
+
 
 
 # Ship 🚢
