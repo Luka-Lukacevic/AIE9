@@ -99,6 +99,36 @@ Use RAGAS to evaluate your open-source Fireworks AI powered RAG app against an O
 
 Additionally, instrument both pipelines with **LangSmith** to capture token usage and cost per query. Use LangSmith's tracing and cost dashboards to compare the total cost of running each provider at scale. Include your evaluation results, cost breakdown, and analysis in your Loom video.
 
+### Results:
+=== RAGAS RESULTS ===
+
+Fireworks AI:
+  Context Precision: 0.7361
+  Faithfulness: 0.5278
+  Answer Correctness: 0.6812
+
+OpenAI:
+  Context Precision: 0.7037
+  Faithfulness: 0.6429
+  Answer Correctness: 0.8879
+
+Fireworks AI (gpt-oss-20b):
+  Runs:           6
+  Input tokens:   13,672
+  Output tokens:  2,476
+  Total tokens:   16,148
+  Total cost:      $0.001700
+  Avg cost/run:   $0.000283
+
+OpenAI (gpt-4.1-mini):
+  Runs:           6
+  Input tokens:   16,435
+  Output tokens:  969
+  Total tokens:   17,404
+  Total cost:     $0.008124  (from LangSmith)
+  Avg cost/run:   $0.001354
+
+
 ## Advanced Activity: Local Models
 
 Swap out the Fireworks AI endpoints for **locally-running open-source models** using [Ollama](https://ollama.com/) or another local inference server of your choice. Run both your embedding model and your chat model locally, and rebuild the RAG pipeline on top of them.
