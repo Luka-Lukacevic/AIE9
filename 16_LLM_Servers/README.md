@@ -83,7 +83,7 @@ What is the difference between serverless and dedicated endpoints?
 
 #### ✅ Answer:
 
-_(insert your answer here)_
+Serverless means we share the provider’s hardware with other users. We pick a model, pay per use, and we do not get a fixed amount of speed or capacity. Under heavy use we can hit rate limits. Dedicated (on-demand) means we pay for our own deployment with reserved GPUs. Latency and throughput are usually more stable, but we pay for the deployment and we should scale it down or delete it when we are done to save money.
 
 ### ❓ Question #2:
 
@@ -91,7 +91,7 @@ Why is it important to consider token throughput and latency when choosing an LL
 
 #### ✅ Answer:
 
-_(insert your answer here)_
+Throughput is how much work the model can finish per second when many people use the app at once. If throughput is too low, requests pile up and you see failures or long waits at busy times. Latency is how long one person waits for the reply. High latency makes the product feel slow and users may leave. For a user-facing app we need enough throughput for peak traffic and latency that still feels responsive.
 
 ## Activity 1: RAGAS Evaluation with Cost Analysis
 
