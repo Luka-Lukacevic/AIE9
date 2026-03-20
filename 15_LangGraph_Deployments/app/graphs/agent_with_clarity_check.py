@@ -65,7 +65,7 @@ def clarity_node(state: MessagesState) -> dict:
     # Find the original user question (first human message)
     user_question = None
     for msg in state["messages"]:
-        if isinstance(msg, HumanMessage) and msg.role == "user":
+        if isinstance(msg, HumanMessage):
             user_question = msg.content
             break
     
