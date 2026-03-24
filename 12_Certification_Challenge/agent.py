@@ -15,7 +15,6 @@ from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_qdrant import QdrantVectorStore
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langgraph.checkpoint.memory import MemorySaver
-from langgraph.store.memory import InMemoryStore
 from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
 from langgraph.prebuilt import ToolNode
@@ -113,7 +112,7 @@ def convert_currency(amount: float, from_currency: str, to_currency: str) -> str
     to_currency = to_currency.upper()
     try:
         url = f"https://api.frankfurter.dev/v1/latest?from={from_currency}&to={to_currency}"
-        response = httpx.get(url, timeout=10)
+        response = httpx.get(url, timeout=10, verify=False)
         response.raise_for_status()
         data = response.json()
         rate = data["rates"][to_currency]
@@ -317,7 +316,23 @@ def debt_payoff_calculator(
 
 # --- User Profile Memory ---
 
-user_profile_store = InMemoryStore()
+import json
+from pathlib import Path
+
+PROFILE_FILE = Path("user_profiles.json")
+
+def _load_profiles() -> dict:
+    if PROFILE_FILE.exists():
+        try:
+            with open(PROFILE_FILE, "r") as f:
+                return json.load(f)
+        except json.JSONDecodeError:
+            return {}
+    return {}
+
+def _save_profiles(profiles: dict):
+    with open(PROFILE_FILE, "w") as f:
+        json.dump(profiles, f, indent=2)
 
 
 @tool
@@ -340,6 +355,7 @@ def save_user_profile(
         current_savings: Current total savings amount.
     """
     try:
+        profiles = _load_profiles()
         profile = {
             "age": age,
             "risk_tolerance": risk_tolerance.lower() if risk_tolerance else "",
@@ -347,7 +363,8 @@ def save_user_profile(
             "annual_income": annual_income,
             "current_savings": current_savings,
         }
-        user_profile_store.put(("user_profiles",), user_id, profile)
+        profiles[user_id] = profile
+        _save_profiles(profiles)
         return f"Profile saved for user '{user_id}'. I can now provide personalized advice based on your financial situation."
     except Exception as e:
         return f"Error saving profile: {e}"
@@ -361,11 +378,11 @@ def get_user_profile(user_id: str) -> str:
         user_id: Unique identifier for the user.
     """
     try:
-        result = user_profile_store.get(("user_profiles",), user_id)
-        if not result:
+        profiles = _load_profiles()
+        profile = profiles.get(user_id)
+        if not profile:
             return f"No profile found for user '{user_id}'. Please save your profile first."
 
-        profile = result.value
         return (
             f"User Profile for '{user_id}':\n"
             f"- Age: {profile.get('age', 'Not set')}\n"

@@ -1,0 +1,9 @@
+{
+  "user_luka": {
+    "age": 29,
+    "risk_tolerance": "moderate",
+    "financial_goal": "retirement",
+    "annual_income": 90000.0,
+    "current_savings": 2500.0
+  }
+}
